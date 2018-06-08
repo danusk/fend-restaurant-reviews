@@ -8,8 +8,11 @@ class DBHelper {
    * Change this to restaurants.json file location on your server.
    */
   static get DATABASE_URL() {
+    /* for local testing, uncomment
     const port = 8000 // Change this to your server port
-    return `https://raw.githubusercontent.com/danusk/fend-restaurant-reviews-app/master/data/restaurants.json`;
+    return `http://localhost:${port}/data/restaurants.json`;
+    */
+    return 'https://danusk.github.io/fend-restaurant-reviews-app/'
   }
 
   /**
