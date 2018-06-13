@@ -22,7 +22,8 @@ window.initMap = () => {
 
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
-        navigator.serviceWorker.register('/fend-restaurant-reviews/sw.js').then(function(registration) {
+        ///fend-restaurant-reviews/sw.js
+        navigator.serviceWorker.register('/sw.js').then(function(registration) {
           // Registration was successful
           console.log('ServiceWorker registration successful with scope: ', registration.scope);
         }, function(err) {
@@ -93,11 +94,13 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
 
         const day = document.createElement('td');
         day.setAttribute("class", "day");
+        day.setAttribute("tabindex", 0);
         day.innerHTML = key;
         row.appendChild(day);
 
         const time = document.createElement('td');
         time.setAttribute("class", "time");
+        time.setAttribute("tabindex", 0);
         time.innerHTML = operatingHours[key];
         row.appendChild(time);
 
@@ -147,6 +150,8 @@ createReviewHTML = (review) => {
     const comments = document.createElement('p');
     comments.innerHTML = review.comments;
     li.appendChild(comments);
+
+    li.setAttribute("tabindex", 0);
 
     return li;
 }
