@@ -22,8 +22,8 @@ window.initMap = () => {
 
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
-        ///fend-restaurant-reviews/sw.js
-        navigator.serviceWorker.register('/sw.js').then(function(registration) {
+        ///
+        navigator.serviceWorker.register('/fend-restaurant-reviews/sw.js').then(function(registration) {
           // Registration was successful
           console.log('ServiceWorker registration successful with scope: ', registration.scope);
         }, function(err) {
